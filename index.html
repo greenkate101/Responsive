@@ -7,7 +7,6 @@
 		*, *:before, *:after {
 			box-sizing: border-box;
 		}
-
 		main,
 		header {
 			padding: 1em;
@@ -17,8 +16,6 @@
 			display: none;
 		}
 		.box {
-			margin-top: 1em;
-			padding: 1em;
 			background-color: #ccc;
 		}
 
@@ -28,28 +25,12 @@
 			padding: 0;
 			overflow: hidden;
 		}
-
-		.box.tall {
-			width: 30%;
-			padding: 1em;
-		}
-		
-		.box.long {
-			width: 70%
-		}
-		
-		.box.copy {
-			width: 100%;
-		}
-		.corgi {
-			width: 20%;
-			height: 40%;
-			float: left;		
-		}
+		.corgi,
 		.child {
-			width: 20%;
-			height: 40%;
-			float: left;
+			width: 100%;
+			max-width: 500px;
+			display: block;
+			margin: 0 auto;
 		}
 
 		.cfphotos:after {
@@ -58,65 +39,83 @@
 			clear: both
 		}
 
-		@media screen and (min-width: 760px) {
+		@media (min-width: 760px) {
 			
 			nav, 
 			h1  {
 				display: inline-block;
 				vertical-align: middle;
 			}
-
 			nav li {
 				display: inline-block;
 			}
-			
-			#section-1 {
-				display: block;
-				float: left;
+			article {
+				width: 70%;
 			}
+
+			#section-1,
+			#section-2 {
+				padding: 1em;
+			}
+
+			#section-1 {
+				float: left;
+				display: block;
+				width: 33.3333%;
+			}
+
 			#section-2 {
 				float: left;
-				width: 60%;
+				width: 66.6666%;
 			}
+				
 			#section-3 {
-				width: 100%;
 				float: left;
+				width: 100%;
 			}
-			.cf:after {
-			content: '';
-			display: block;
-			clear: both
-		}
-		}
 
-		@media screen and (min-width: 1000px) {
-			 nav, 
+			.cf:before {
+				content: '';
+				display: block;
+				clear: both
+			}			
+		}
+			
+		@media (min-width: 1000px) {
+			nav, 
 			h1  {
 				display: inline-block;
 				vertical-align: middle;
 			}
 
+			#section-1 {
+				width: 25%;
+			}
+
+			#section-2 {
+				width: 50%;
+			}
+
+			#section-3 {
+				width: 25%;
+			}
+			
+			.cf:after {
+				content: '';
+				display: block;
+				clear: both
+			}
+
 			nav li {
 				display: inline-block;
 			}
-			#section-1 {
+			
+			.box .long:after {
+				content: '';
 				display: block;
-				float: left;
-				width: 25%;
-			}
-			#section-2 {
-				float: left;
-				width: 44%;
-			}
-			#section-3 {
-				float: left;
-				width: 25%;
-			}
-			.cf:after {
-			content: '';
-			display: block;
-			clear: both
+				clear: both
 		   }
+		}
 	</style>
 </head>
 <body>
@@ -140,58 +139,58 @@
 			</nav>
 	</header>
 	<main class="cf">
-		<section id="section-1" class="box tall">
-			<h2>Section 1</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<ul>
-				<li>
-					<a href="linkone.html">Link 1</a>
-				</li>
-				<li>
-					<a href="linktwo">Link 2</a>
-				</li>
-				<li>
-					<a href="linkthree">Link 3</a>
-				</li>
-				<li>
-					<a href="linkfour">Link 4</a>
-				</li>
-			</ul>
-			<p>Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		</section>
+		<div class="container">
+			<section id="section-1" class="box tall">
+				<h2>Section 1</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<ul>
+					<li>
+						<a href="linkone.html">Link 1</a>
+					</li>
+					<li>
+						<a href="linktwo">Link 2</a>
+					</li>
+					<li>
+						<a href="linkthree">Link 3</a>
+					</li>
+					<li>
+						<a href="linkfour">Link 4</a>
+					</li>
+				</ul>
+				<p>Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</section>
 
-		<section id="section-2" class="white block">
-			<h1>Section 2</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<div class="cf photos">
-			<img class="cf" src="http://67.media.tumblr.com/tumblr_lumu15wfCB1qkodk4o1_500.jpg">
-			<img class="cf" src="http://i.imgur.com/Pjess.gif">
-			</div>
-		</section>
-	
-		<section id="section-3" class="box long">
-			<h2>Section 3</h2>
-			<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
-			deserunt mollit anim id est laborum.</p>
-			
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>		
-		</section>		
+			<section id="section-2" class="cf">
+				<h1>Section 2</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<div class="cf photos">
+				<img class="corgi cf" src="http://67.media.tumblr.com/tumblr_lumu15wfCB1qkodk4o1_500.jpg">
+				<img class="child cf" src="http://i.imgur.com/Pjess.gif">
+				</div>
+			</section>
+			<section id="section-3" class="box long">
+				<h2>Section 3</h2>
+				<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
+				deserunt mollit anim id est laborum.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>		
+			</section>
+		</div>	
 	</main>
 	<footer class="box copy">
 		<small>Copyright &copy; 2016 Lorem Ipsum</small>	
